@@ -6,20 +6,20 @@ class Calculator {
         try{
 
             //obtaining value for each input
-             this.x = document.getElementById("usr").value;
-             this.y = document.getElementById("tip").value;
-             this.z = document.getElementById("ppl").value;
+             this.bill = document.getElementById("usr").value;
+             this.tip = document.getElementById("tip").value;
+             this.noPerson = document.getElementById("ppl").value;
             //parse float the first variable
-             this.a = parseFloat(this.x);
+             this.floatBill = parseFloat(this.bill);
             
-            if(isNaN(this.a))
+            if(isNaN(this.floatBill) || this.floatBill<0)
             {
                 //Set the default value in case of Not a number .
                 document.getElementById("usr").value=0.0;
             }
             else{
                 //Else set the parse value in input form.
-                document.getElementById("usr").value=this.a;
+                document.getElementById("usr").value=this.floatBill;
                 
             }
             }
@@ -46,7 +46,7 @@ class TipCalculator extends Calculator{
         //This method calculates the tip per person
         try{
             //This if is checking wheather amount is non a noumber if true set default value 0.
-            if(isNaN(this.a))
+            if(isNaN(this.floatBill) || this.floatBill<0)
             {
                 
                 document.getElementById("tipperpp").innerHTML = 0;
@@ -54,8 +54,8 @@ class TipCalculator extends Calculator{
             }
             else{
                 //If above is false then calculate tip per person
-                 this.d=(this.a*this.y)/(this.z*100);
-                 document.getElementById("tipperpp").innerHTML =this.d;
+                 this.temp=(this.floatBill*this.tip)/(this.noPerson*100);
+                 document.getElementById("tipperpp").innerHTML =this.temp;
           
 
             }
@@ -74,14 +74,14 @@ class TipCalculator extends Calculator{
         //This methord calculate amount per person
         try{
             //This if is checking wheather amount is non a noumber if true set default value 0.
-        if(isNaN(this.a))
+        if(isNaN(this.floatBill) || this.floatBill<0 )
         {
             document.getElementById("total").innerHTML = 0;
         }
         else{
             //If above is false then calculate the value.
-            this.e=(this.a)+(this.a*this.y)/100;
-            document.getElementById("total").innerHTML=(this.e)/(this.z);
+            this.temp2=(this.floatBill)+(this.floatBill*this.tip)/100;
+            document.getElementById("total").innerHTML=(this.temp2)/(this.noPerson);
         }
       
         }
@@ -97,9 +97,9 @@ class TipCalculator extends Calculator{
 //This function create the object of subclass and call required methord.
  function myController() {
      //subclass object is created and call the default constructor of subclass
-     var bb= new TipCalculator();
-     bb.tipCalculation();
-     bb.totalperPerson();
+     var obj= new TipCalculator();
+     obj.tipCalculation();
+     obj.totalperPerson();
 
 
  }
