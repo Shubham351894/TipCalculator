@@ -14,7 +14,7 @@ class Calculator {
             
             if(isNaN(this.floatBill) || this.floatBill<0)
             {
-                //Set the default value in case of Not a number .
+                //Set the default value in case of Not a number and less than 0.
                 document.getElementById("usr").value=0.0;
             }
             else{
@@ -45,7 +45,7 @@ class TipCalculator extends Calculator{
     tipCalculation() {
         //This method calculates the tip per person
         try{
-            //This if is checking wheather amount is non a noumber if true set default value 0.
+            //This if is checking wheather amount is non a noumber or less than 0 if true set default value 0.
             if(isNaN(this.floatBill) || this.floatBill<0)
             {
                 
@@ -73,7 +73,7 @@ class TipCalculator extends Calculator{
     totalperPerson(){
         //This methord calculate amount per person
         try{
-            //This if is checking wheather amount is non a noumber if true set default value 0.
+            //This if is checking wheather amount is non a noumber or less than 0 if true set default value 0.
         if(isNaN(this.floatBill) || this.floatBill<0 )
         {
             document.getElementById("total").innerHTML = 0;
