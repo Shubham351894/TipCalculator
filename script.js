@@ -1,5 +1,5 @@
-class Calculator {
-    // default constructor inside a class
+class Calculator {//base class calculator
+    // default constructor inside a calculator base class  to initialized property
     constructor()
     {
         
@@ -34,8 +34,8 @@ class Calculator {
    
     
   }
-  //Inheritance
-class TipCalculator extends Calculator{
+  //Inheritance subclass TipCalculator extends base class Calculator 
+class TipCalculator extends Calculator{ 
 
     constructor()
     {
@@ -94,7 +94,7 @@ class TipCalculator extends Calculator{
     }
 
 }
-//This function create the object of subclass and call required methord.
+//This function create the object of subclass and call required methords with that object.
  function myController() {
      //subclass object is created and call the default constructor of subclass
      var obj= new TipCalculator();
